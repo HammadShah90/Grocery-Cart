@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.mainGroceryBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.mainGroceryPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 1px 1px 10px #c2c2c2, -1px -1px 10px #c2c2c2;
+}
+
+.mainGroceryPage:hover {
+    box-shadow: 2px 2px 10px #a3a3a3, -2px -2px 10px #a3a3a3;
+}
+
+.mainGroceryPage .alertText {
+    display: flex;
+    justify-content: center;
+    color:#ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #1b9e01;
+}
+
+.visibilty {
+    visibility: hidden;
+}
+
+.mainGroceryPage h1 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.cartInputButton {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 4px;
+}
+
+
+.cartInputButton #inputText:focus {
+    outline: none;
+}
+
+.cartInputButton #inputText::placeholder {
+    color: #a3a3a3;
+}
+
+.cartInputButton #inputText {
+    font-size: 24px;
+    border: transparent;
+    border-bottom : 1px solid #dddddd;
+}
+
+.cartInputButton .textButton {
+    color: #198cf8;
+    outline: none;
+    border: 2px solid #198cf8;
+    font-size: 24px;
+    padding: 5px 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: 0.5s;
+}
+
+.cartInputButton .textButton:hover {
+    background: #198cf8;
+    color: #ffffff;
+    cursor: pointer;
+    /* border: transparent; */
+}
+
+.itemList {
+    margin-top: 50px;
+    transition: 0.5s;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 10px 0px;
+    margin-top: 5px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.itemList p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.itemList #itemText {
+    font-size: 20px;
+    padding: 5px 10px;
+    border: transparent;
+}
+
+.itemButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.itemList .editItemButton{
+    color: #1b9e01;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: transparent;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: 0.5s;
+} 
+
+.itemList .editItemButton:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.itemList .deleteItemButton {
+    color: #ff0000;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: transparent;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: 0.5s;
+}
+
+.itemList .deleteItemButton:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+.mainClearItem {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.clearItemButton {
+    background: #fc6666;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: transparent;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 5px;
+    transition: 0.5s;
+}
+
+.clearItemButton:hover {
+    background: #f80000;
+    color: #ffffff;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.overlay {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.7;
+}
+
+.modaal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 10px;
+    width: 25em;
+    height: 15em;
+    left: 440px;
+    top: 100px;
+    z-index: 2;
+    background-color: #1b9e01;
+}
+
+.modaal #modaalInput {
+    font-size: 24px;
+    padding: 10px 15px;
+    border: transparent;   
+}
+
+.modaal #modaalInput:focus {
+    outline: none;
+}
+
+#endEditing {
+    background-color: #ff9306;
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #4e2d01;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
