@@ -196,8 +196,8 @@
     border-radius: 10px;
     width: 25em;
     height: 15em;
-    left: 110px;
-    top: 100px;
+    left: 1077px;
+    top: 75px;
     z-index: 2;
     background-color: #1b9e01;
 }
@@ -226,4 +226,98 @@
 
 .hidden {
     display: none;
+}
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .modaal {
+        left: 520px;
+        top: 75px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .modaal {
+        left: 313px;
+        top: 75px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .modaal {
+        left: 184px;
+        top: 75px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .mainGroceryPage {
+        padding: 34px;
+    }
+
+    .modaal {
+        width: 22em;
+        height: 12em;
+        left: 36px;
+        top: 70px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    .cartInputButton #inputText {
+        font-size: 20px;
+    }
+
+    .item {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .mainGroceryPage {
+        padding: 13px;
+    }
+
+    .mainGroceryPage h1 {
+        font-size: 36px;
+    }
+
+    .modaal {
+        width: 18em;
+        height: 10em;
+        left: 42px;
+        top: 75px;
+    }
+
+    .modaal #modaalInput {
+        font-size: 20px;
+    }
+
+    #endEditing {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .mainGroceryPage {
+        padding: 10px;
+    }
+
+    .mainGroceryPage h1 {
+        font-size: 34px;
+    }
+
+    .modaal {
+        width: 18em;
+        height: 10em;
+        left: 15px;
+        top: 75px;
+    }
+
+    .modaal #modaalInput {
+        font-size: 20px;
+    }
+
+    #endEditing {
+        font-size: 16px;
+    }
 }

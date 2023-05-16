@@ -1,4 +1,4 @@
-// -------------Get HTML------------->>>>
+// -------------Get HTML Elements------------->>>>
 
 const inputText = document.querySelector("#inputText");
 const addButton = document.querySelector(".textButton");
@@ -12,15 +12,14 @@ const overlay = document.querySelector(".overlay");
 // console.log(alertText);
 
 
-// --------Create Empty Array------->>>>
+// --------Create Variables------->>>>
 
 let cartArticles = []
-var itemUniqueId;
-// console.log(itemUniqueId);
+let editedUID = null
 
 
 
-// -----------Create Functions---------->>>>
+// -------------------Create Functions------------------->>>>>>>>>>>
 
 
 // ----------Alert Function------------>>>>
@@ -34,8 +33,9 @@ const alertPara = (alertInnerText, action) => {
         alertText.style.visibility = "hidden"
         alertText.classList.remove(`alert${action}`)
 
-    }, 1500)
+    }, 2000)
 }
+
 
 
 // ----------button Transform Function------------>>>>
@@ -48,6 +48,7 @@ const buttonTransform = () => {
 
     }, 100)
 }
+
 
 
 // ----------Add Button Function------------>>>>
@@ -64,7 +65,7 @@ const listAdd = () => {
 
     buttonTransform();
 
-    var itemUniqueId = Date.now();
+    let itemUniqueId = Date.now();
 
     // console.log(itemUniqueId);
 
@@ -98,10 +99,13 @@ const listAdd = () => {
 }
 
 
+
 // ----------Edit Button Function------------>>>>
 
 const editItem = (itemUId) => {
-    console.log("Edited Item ID", itemUId);
+    // console.log("Edited Item ID", itemUId);
+
+    editedUID = itemUId
 
     editModaal.classList.remove("hidden")
     overlay.classList.remove("hidden")
@@ -124,36 +128,45 @@ const editItem = (itemUId) => {
 }
 
 
+
 // ----------Edit Done Button Function------------>>>>
 
 const editDoneButton = () => {
+
     editModaal.classList.add("hidden")
     overlay.classList.add("hidden")
+
+    // console.log(editedUID);
     
-    console.log(modaalInput.value);
+    // console.log(modaalInput.value);
     
-    // console.log(itemUId);
-    
-    // console.log(itemLists.children[0]);
-    
-    // const editMyItem = Array.from(itemLists.children);
-    
-    // console.log(editMyItem[0]);
-    
-    // const filteredData2 = filteredData.find((singleItem) => singleItem.id === itemUId)
-    
-    // console.log(filteredData2);
-    
-    // filteredData[0].querySelector('p').innerHTML = modaalInput.value
-    
-    // alertPara(`${inputText.value} item is Edited`, `Success`);
+    const indexNum = cartArticles.findIndex((singleItem) => singleItem .includes(editedUID));
+
+    // console.log(indexNum);
+
+    cartArticles.splice(indexNum, 1, `<div id="${editedUID}" class="item">
+                                        <p>${modaalInput.value}</p>
+                                        <div class="itemButtons">
+                                            <button class="editItemButton" onclick="editItem('${editedUID}')">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="deleteItemButton" onclick="deleteItem('${editedUID}')">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                     </div>`);
+
+    // console.log(cartArticles);
+
+    itemLists.innerHTML = cartArticles.join("");
 }
+
 
 
 // ----------Delete Button Function------------>>>>
 
 const deleteItem = (itemUId) => {
-    console.log("Deleted Item ID", itemUId);
+    // console.log("Deleted Item ID", itemUId);
     
     const findIndexNum = cartArticles.findIndex((perItem) => perItem.includes(itemUId));
     
@@ -165,12 +178,13 @@ const deleteItem = (itemUId) => {
     
     alertPara(`Item is deleted`, `Danger`);
     
-    if (findIndexNum == "0") {
+    if (itemLists.innerHTML === "") {
 
         clearAllButton.classList.add("hidden")
 
     }
 }
+
 
 
 // ----------Clear All Button Function------------>>>>
