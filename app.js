@@ -14,10 +14,14 @@ const overlay = document.querySelector(".overlay");
 
 // --------Create Variables------->>>>
 
-let cartArticles = []
 let editedUID = null
+let cartArticles = JSON.parse(localStorage.getItem('myList')) || []
 
+itemLists.innerHTML = cartArticles.join("")
 
+if(itemLists.innerHTML = cartArticles.join("")){
+    clearAllButton.classList.remove("hidden")
+}
 
 // -------------------Create Functions------------------->>>>>>>>>>>
 
@@ -94,7 +98,7 @@ const listAdd = () => {
 
     inputText.value = "";
 
-
+    localStorage.setItem('myList', JSON.stringify(cartArticles))
 
 }
 
@@ -159,6 +163,8 @@ const editDoneButton = () => {
     // console.log(cartArticles);
 
     itemLists.innerHTML = cartArticles.join("");
+
+    localStorage.setItem('myList', JSON.stringify(cartArticles));
 }
 
 
@@ -183,6 +189,8 @@ const deleteItem = (itemUId) => {
         clearAllButton.classList.add("hidden")
 
     }
+
+    localStorage.setItem('myList', JSON.stringify(cartArticles));
 }
 
 
@@ -200,9 +208,11 @@ const clearAll = () => {
     inputText.value = "";
     
     
-    alertPara(`All Items are Cleared`, `Danger`)
+    alertPara(`All Items are Cleared`, `Danger`);
     
-    clearAllButton.classList.add("hidden")
+    clearAllButton.classList.add("hidden");
+
+    localStorage.setItem('myList', JSON.stringify(cartArticles));
     
 }
 

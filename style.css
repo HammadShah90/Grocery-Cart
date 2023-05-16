@@ -228,6 +228,7 @@
     display: none;
 }
 
+/* ----------Large Laptop--------->>>>> */
 
 @media (min-width: 1025px) and (max-width: 1440px) {
     .modaal {
@@ -236,6 +237,8 @@
     }
 }
 
+/* ----------Laptop--------->>>>> */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .modaal {
         left: 313px;
@@ -243,12 +246,16 @@
     }
 }
 
+/* ----------Tablet--------->>>>> */
+
 @media (min-width: 426px) and (max-width: 768px) {
     .modaal {
         left: 184px;
         top: 75px;
     }
 }
+
+/* ----------Large Mobile--------->>>>> */
 
 @media (min-width: 376px) and (max-width: 425px) {
     .mainGroceryPage {
@@ -262,6 +269,8 @@
         top: 70px;
     }
 }
+
+/* ----------Mediam Mobile--------->>>>> */
 
 @media (min-width: 321px) and (max-width: 375px) {
     .cartInputButton #inputText {
@@ -295,6 +304,8 @@
         font-size: 16px;
     }
 }
+
+/* ----------Small Mobile--------->>>>> */
 
 @media screen and (max-width: 320px) {
 
