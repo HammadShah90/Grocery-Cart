@@ -26,12 +26,19 @@
 }
 
 .mainGroceryPage .alertText {
-    display: flex;
-    justify-content: center;
     color:#ffffff;
     padding: 5px 10px;
     border-radius: 10px;
     font-weight: bold;
+}
+
+.alertDanger {
+    color: #ffffff;
+    background-color: #f80000;
+}
+
+.alertSuccess {
+    color: #ffffff;
     background-color: #1b9e01;
 }
 
@@ -145,13 +152,13 @@
 }
 
 
-.mainClearItem {
+/* .mainClearItem {
+} */
+
+.clearItemButton {
     margin-top: 60px;
     display: flex;
     justify-content: center;
-}
-
-.clearItemButton {
     background: #fc6666;
     font-size: 20px;
     padding: 10px 15px;
@@ -189,7 +196,7 @@
     border-radius: 10px;
     width: 25em;
     height: 15em;
-    left: 440px;
+    left: 110px;
     top: 100px;
     z-index: 2;
     background-color: #1b9e01;
